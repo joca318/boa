@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    configmanagement.gke.io/cluster-selector: production
+  labels:
+    run: yet-another-nginx
+  name: yet-another-nginx
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      run: yet-another-nginx
+  template:
+    metadata:
+      labels:
+        run: yet-another-nginx
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        ports:
+        - containerPort: 80
+
