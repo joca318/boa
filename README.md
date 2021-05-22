@@ -1,2 +1,0 @@
-# boa
-ConfigSync
